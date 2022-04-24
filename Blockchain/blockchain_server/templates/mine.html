@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-body">
+        <h4 class="card-title">交易封裝
+          <input type="button" class="btn btn-sq-xs btn-primary" value="更新" onclick="location.href='/before_mining'">
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Unmined Transactions Table -->
+<div class="container">
+  <table id="transactions_table" class="table table-striped table-bordered table-hover text-center" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>時間</th>
+        <th>電壓</th>
+        <th>電流</th>
+        <th>平均功率</th>
+        <th>虛功率</th>
+        <th>視在功率</th>
+        <th>功率因數</th>
+        <th>消耗功率</th>
+        <th>數位簽章</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction_pac in transaction_pack_list %}
+        <tr>
+          <td>{{transaction_pac.date}}</td>
+          <td>{{transaction_pac.electric_pressure}}</td>
+          <td>{{transaction_pac.electric_current}}</td>
+          <td>{{transaction_pac.average_power}}</td>
+          <td>{{transaction_pac.idle_power}}</td>
+          <td>{{transaction_pac.apparent_power}}</td>
+          <td>{{transaction_pac.power_factor}}</td>
+          <td>{{transaction_pac.consumed_power}}</td>
+          <td>{{transaction_pac.signature}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="col-lg-12 text-center">
+    <input type="button" class="btn btn-primary btn-lg" value="挖礦" onclick="location.href='/mining'">
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-body">
+        <h4 class="card-title">區塊列表
+          <input type="button" class="btn btn-sq-xs btn-primary" value="更新" onclick="location.href='/mine'">
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blockchain Transactions Table -->
+<div class="container">
+  <table id="transactions_table" class="table table-striped table-bordered table-hover text-center" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>時間</th>
+        <th>區塊號碼</th>
+        <th>流水號</th>
+        <th>前區塊雜湊值</th>
+        <th>目標塊雜湊值</th>
+        <th>驗證者</th>
+        <th>工作難度</th>
+        <th>數位簽章</th></tr>
+    </thead>
+    <tbody>
+      {% for block in blockchain %}
+      <tr>
+        <td>{{block.date}}</td>
+        <td>{{block.block_number}}</td>
+        <td>{{block.nonce}}</td>
+        <td>{{block.previous_hash}}</td>
+        <td>{{block.hash}}</td>
+        <td>{{block.verifier}}</td>
+        <td>{{block.difficulty}}</td>
+        <td>{{block.signature}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

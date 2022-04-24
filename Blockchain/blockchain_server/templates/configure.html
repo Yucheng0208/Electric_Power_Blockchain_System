@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-body">
+        <h4 class="card-title">
+          <input type="button" class="btn btn-sq-xs btn-primary" value="開始" onclick="location.href='/auto_mining'">
+          挖礦
+        </h4>
+        <h4 class="card-title">
+          <input type="button" class="btn btn-sq-xs btn-primary" value="開始" onclick="location.href='/synchronize_blockchain'">
+          同步區塊鏈
+        </h4>
+        <h4 class="card-title">
+          <input type="button" class="btn btn-sq-xs btn-primary" value="開始" onclick="location.href='/automatic_running'">
+          運作
+        </h4>
+        <h4 class="card-title">
+          <input type="button" class="btn btn-sq-xs btn-danger" value="停止" onclick="location.href='/configure'">
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<table id="transactions_table" class="table table-bordered  table-hover text-center" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>時間</th>
+      <th>電壓</th>
+      <th>電流</th>
+      <th>平均功率</th>
+      <th>虛功率</th>
+      <th>視在功率</th>
+      <th>功率因數</th>
+      <th>消耗功率</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in mysql_data %}
+    <tr>
+      <td>{{data.date}}</td>
+      <td>{{data.electric_pressure}}</td>
+      <td>{{data.electric_current}}</td>
+      <td>{{data.average_power}}</td>
+      <td>{{data.idle_power}}</td>
+      <td>{{data.apparent_power}}</td>
+      <td>{{data.power_factor}}</td>
+      <td>{{data.consumed_power}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

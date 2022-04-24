@@ -1,0 +1,783 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<hr>
+<div class="col-lg-12 text-center">
+  <div class="card-title">
+    <b>
+      <font size="8" >Transmission work !</font>
+    </b>
+  </div>
+<hr>
+</div>
+<!-- Mined Transactions Table -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="card-title">
+          <b>
+            <font size="6" >@ Read data from MySQL.</font>
+          </b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="col-sm-5">
+        <label for="amount_input_data" >
+          <font size="5">MySQL data : </font>
+        </label>
+      </div>
+      <form id="amount_mysql_data_form">
+        <input type="number" name="amount_mysql_data" id="amount_mysql_data" rows="1" size="1" value=10 class="form-control" >
+      </form>
+      <div class="col-sm-2">
+        <input type="button" id="Read_mysql_button" class="btn btn-dark btn-lg" value="Read data">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Blockchain Transactions Table    -->
+<div class="container">
+  <table id="transactions_table" class="table table-bordered  table-hover text-center" cellspacing="0" width="100%">
+  </table>
+</div>
+<hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card-body">
+          <div class="card-title">
+            <b>
+              <font size="6" >@ Electrical power parameters will be transmmited.</font>
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <div class="container">
+       <div class="row justify-content-center">
+         <div class="form-inline">
+          <!--<div class="col-lg-12 text-center">-->
+
+
+           <div class="form-group">
+             <div class="col-sm-5">
+               <label for="amount_input_data" > <font size="5">Submit data : </font></label>
+             </div>
+
+               <input type="number" name="amount_input_data" id="amount_input_data" rows="1" size="1" value=1 class="form-control" >
+
+
+               <div class="col-sm-2">
+                 <input type="button" id="Input_data_button" class="btn btn-success btn-lg" value="Input data">
+               </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Blockchain Transactions Table -->
+   <!-- <div class="container">
+      <table id="transactions_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      </table>
+    </div>
+     -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/DataTables/js/datatables.min.js"></script>
+    <script src="/static/vendor/DataTables/js/ellipsis.js"></script>
+
+
+
+    <br>
+
+
+
+
+
+
+
+    <div class="container alert alert-secondary">
+    <form id="transaction_form" >
+     <!--
+        <div class="row">
+          <label class="col-sm-2">User:</label>
+          <div class="col-sm-10">
+            <input type="text" name="sender_address" id="sender_address" rows="2" class="form-control">
+
+          </div>
+        </div>
+
+        <br>
+
+
+
+        <div class="row">
+          <label class="col-sm-2">Receiver:</label>
+          <div class="col-sm-10">
+            <input type="text" name="recipient_address" id="recipient_address" rows="2" class="form-control">
+          </div>
+        </div>
+      -->
+        <br>
+      <div class="container">
+       <div class="alert alert-info" role="alert">
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="5"> User  :  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="sender_address" id="sender_address" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="5">Receiver  : </font></label></div>
+        <div class="col-sm-4"><input type="text" name="recipient_address" id="recipient_address" rows="1" class="form-control"></div>
+      </div>
+      </div>
+     </div>
+
+
+    <div class="container">
+     <div class="alert alert-danger " role="alert">
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="5"> Voltage (V)  : </font></label></div>
+        <div class="col-sm-4"><input type="number" name="amount_voltage" id="amount_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="5"> Current (A)   : </font></label></div>
+        <div class="col-sm-4"><input type="number" name="amount_current" id="amount_current" rows="1" class="form-control"></div>
+      </div>
+     </div>
+    </div>
+    <div class="container">
+     <div class="alert alert-success  " role="alert">
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="5">Power (W)  : </font></label></div>
+        <div class="col-sm-4"><input type="number" name="amount_power" id="amount_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="5" >Eenergy  : </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="amount_energy" id="amount_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+     </div>
+    </div>
+
+
+    <div class="container">
+     <div class="alert alert-warning" role="alert">
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="5" >Tran-energy: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="amount_transaction_energy" id="amount_transaction_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="5">Datatime  : </font></label></div>
+        <div class="col-sm-4"><input type="text"  name="amount_datatime" id="amount_datatime" rows="1"  class="form-control"></div>
+      </div>
+     </div>
+    </div>
+
+
+
+      <!--
+         <div class="row">
+          <label class="col-sm-2">Transaction energy (kW-hr):</label>
+          <div class="col-sm-10">
+            <input type="text" name="amount_transaction_energy" id="amount_transaction_energy" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <label class="col-sm-2">Datatime:</label>
+          <div class="col-sm-10">
+            <input type="text" name="amount_datatime" id="amount_datatime" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+       -->
+      <div class="container">
+        <div class="alert alert-dark " role="alert">
+        <div class="row">
+          <label class="col-sm-2"><font size="5">Private_Key  : </font></label>
+          <div class="col-sm-10">
+            <input type="text" name="sender_private_key" id="sender_private_key" rows="2" class="form-control">
+          </div>
+         </div>
+        </div>
+      </div>
+
+
+
+
+       <!--  <div class="col-sm-10"> <br>
+           <input type="hidden"  name="public_key_to_master" id="public_key_to_master" rows="2" class="form-control"> -->
+        <!--
+            <input type="text"  name="public_key_to_master" id="public_key_to_master" rows="2" class="form-control">
+         -->
+      <!--    </div>-->
+
+
+
+
+
+
+
+      <!-- Modal  <div class="row">  -->
+        <div class="modal-footer">
+          <!--<div class="col-lg-12 text-center">-->
+           <div>
+           <input type="button" id="Write_Private_key" class="btn btn-info btn-lg" value="Write Private key">
+           <input type="button" id="generate_transaction" class="btn btn-primary btn-lg" value="Start Transmission">
+          </div>
+        </div>
+
+        <br>
+
+    </form>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card-body">
+            <div class="card-title"> <b><font size="6" >@ Show the electrical energy status.</font></b> </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Unmined Transactions Table -->
+    <div class="container" >
+    <!--  <div class="{text-align: center;}">
+
+      <table id="unmined_transactions_table" class="table table-striped table-bordered text-center" cellspacing="0" width="100%"  >
+      </table>-->
+      <table id="unmined_transactions_table" class="table table-striped table-bordered table table-hover text-center" cellspacing="0" width="100%"  >
+      </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal modal-alert fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <div class="modal-title col-md-10"><b><font color='blue' size=4>Confirm transission and transaction details!</font></b> </div>
+            <button type="button" class="close col-md-2" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+
+          <div class="modal-body">
+
+            <form id="confirmation_transaction_form">
+
+                <div class="row">
+                  <label class="col-sm-12">User:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="sender_address" id="confirmation_sender_address" rows="2" class="form-control" readonly>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Receiver:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="recipient_address" id="confirmation_recipient_address" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Voltage data (V): </label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_voltage" id="confirmation_voltage" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Current data (A):</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_current" id="confirmation_current" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Power data (kW):</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_power" id="confirmation_power" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Electrical energy data (kW-hr):</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_energy" id="confirmation_energy" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                 <div class="row">
+                  <label class="col-sm-12">Transaction energy (kW-hr):</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_transaction_energy" id="confirmation_transaction_energy" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <label class="col-sm-12">Measurement time:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="amount_datatime" id="confirmation_datatime" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+                  <label class="col-sm-12">Signature:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="signature" id="transaction_signature" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+               <!-- <div class="invisible"> -->
+                <div class="row">
+                  <label class="col-sm-12">public_key:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name=public_key_to_master id="confirmation_public_key_to_master" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+                <!-- </div>-->
+
+
+            </form>
+
+
+            <div class="row">
+              <label class="col-sm-12">Blockchain Node URL:</label>
+              <div class="col-sm-12">
+                <input type="text" name="node_url" id="node_url" rows="2" class="form-control" value="http://127.0.0.1:2000">
+              </div>
+            </div>
+
+
+             <div class="row">
+            <!--   <label class="col-sm-12">Blockchain Node URL:</label>  -->
+              <div class="col-sm-12">
+                <input type="text" name="node_url_2" id="node_url_2" rows="2" class="form-control" value="http://127.0.0.1:2002">
+              </div>
+            </div>
+
+          <div class="row">
+            <!--   <label class="col-sm-12">Blockchain Node URL:</label>  -->
+              <div class="col-sm-12">
+                <input type="text" name="node_url_2" id="node_url_2" rows="2" class="form-control" value="http://127.0.0.1:2004">
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Disagree</button>
+            <button type="button" id="button_confirm_transaction" class="btn btn-primary">Affirm!</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript -->
+  <!--  <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/DataTables/js/datatables.min.js"></script>
+    <script src="/static/vendor/DataTables/js/ellipsis.js"></script>
+
+
+
+    <script>
+      var transactions_b = [];
+      energy= [];
+      var Contract_energy;
+      var Dissipation_energy;
+      var Transaction_energy;
+      var Remaining_energy;
+      function myFunction(aa) {
+        aa = 2;
+      }
+      $(function () {
+        $("#Write_Private_key").click(function () {
+          $.ajax({
+            url: "/Write_Private_key",
+            type: "GET",
+            success: function(response){
+              document.getElementById("sender_private_key").value = response["Write_Private_key"]
+            },
+              error: function(error){
+                console.log(error);
+                console.log('#####');
+              }
+            });
+
+          });
+      });
+
+
+
+
+
+
+    /// Read data from Raspberry Mysql database (BEGIN)
+   //$("#Read_mysql_button").click(function () {
+      $("#Read_mysql_button").click(function () {
+        $.ajax({
+          url: "/Mysql_user_data",
+          type: 'GET',
+          success: function(response){
+
+
+              energy_cc =[];
+              //energy_cc=[[1,2,3,4]];
+              energy_cc=response["energy_c"];
+
+
+            // Restrict a column to 10 characters, do split words
+              $('#unmined_transactions_table').dataTable( {
+                data: energy_cc,
+                destroy: true,
+                //ordering: false,
+                columns: [
+                          { title: "Contract_energy"},
+                          { title: "Dissipation_energy"},
+                          { title: "Transaction_energy"},
+                          { title: "Gain_energy"},
+                          { title: "Remaining_energy"},
+
+                          //{ title: "Datatime"},
+
+                          ],
+                columnDefs: [ {targets: [1,2,3], render: $.fn.dataTable.render.ellipsis( 25 )}]
+              } );
+
+          },
+          error: function(error){
+            console.log(error);
+          }
+
+        });
+       ///  Energy calculation (END)
+
+
+       }) ;
+
+
+      /// Python_transactions_total_data  and Energy calculation(BEGIN)
+     $(function (){
+         /// Python_transactions_total_data (BEGIN)
+        $.ajax({
+          url: "/Mysql_user_data",
+          type: 'GET',
+          success: function(response){
+              transactions_b = response["transactions_total"];
+              count = 1;
+              $('#transactions_table').dataTable( {
+                data: transactions_b,
+                ordering: false,
+                columns: [{ title: "#" },
+                          { title: "User"},
+                          { title: "Receiver"},
+                          { title: "Voltage(V)"},
+                          { title: "Current(A)"},
+                          { title: "Power(W)"},
+                          { title: "Energy(KW-hr)"},
+                          { title: "Datatime"},
+                          //{ title: "Datatime"},
+
+                          ],
+                columnDefs: [ {targets: [1,2,3], render: $.fn.dataTable.render.ellipsis( 25 )}]
+              } );
+
+          },
+          error: function(error){
+            console.log(error);
+          }
+
+        });
+       /// Python_transactions_total_data (END)
+
+
+       /// Energy calculation(BEGIN)
+
+        $.ajax({
+          url: "/Mysql_user_data",
+          type: 'GET',
+          success: function(response){
+
+
+              energy_cc =[];
+              //energy_cc=[[1,2,3,4]];
+              energy_cc=response["energy_c"];
+
+
+            // Restrict a column to 10 characters, do split words
+              $('#unmined_transactions_table').dataTable( {
+                data: energy_cc,
+                //ordering: false,
+                columns: [
+                          { title: "Contract_energy"},
+                          { title: "Dissipation_energy"},
+                          { title: "Transaction_energy"},
+                          { title: "Gain_energy"},
+                          { title: "Remaining_energy"},
+
+                          //{ title: "Datatime"},
+
+                          ],
+                columnDefs: [ {targets: [1,2,3], render: $.fn.dataTable.render.ellipsis( 25 )}]
+              } );
+
+          },
+          error: function(error){
+            console.log(error);
+          }
+
+        });
+       ///  Energy calculation (END)
+
+
+
+
+
+
+
+
+
+        $("#add_data_button").click(function () {
+
+          $.ajax({
+            url: "/Mysql_user_data",
+            type: "GET",
+            success: function(response){
+
+              window.location.reload();
+
+            },
+            error: function(error){
+              console.log(error);
+            }
+          });
+
+        });
+
+
+        $("#refresh_transactions").click(function () {
+
+          window.location.reload();
+
+        });
+
+
+        $("#refresh_blockchain").click(function () {
+
+          $.ajax({
+            url: "/Mysql_user_data",
+            type: "GET",
+            success: function(response){
+
+              window.location.reload();
+
+            },
+            error: function(error){
+              console.log(error);
+            }
+          });
+
+        });
+
+      })
+
+   /// Python_transactions_total_data  and Energy calculation(BEGIN)
+
+
+   /// Input_data_button (Start)
+
+     $("#Input_data_button").click(function () {
+
+         aa=amount_input_data.value-1;
+         chain_length=transactions_b.length-1;
+         if (aa>=0 && aa<=chain_length)
+             {
+              sender_address.value =transactions_b[aa][1];
+              recipient_address.value =transactions_b[aa][2];
+              amount_voltage.value =transactions_b[aa][3];
+              amount_current.value =transactions_b[aa][4];
+              amount_power.value =transactions_b[aa][5];
+              amount_energy.value =transactions_b[aa][6];
+              amount_datatime.value =transactions_b[aa][7];
+             }
+
+          else
+             {sender_address.value ="";
+              recipient_address.value ="";
+              amount_voltage.value ="";
+              amount_current.value ="";
+              amount_power.value ="";
+              amount_energy.value ="";
+              amount_datatime.value ="";
+             };
+        });
+
+      /// Input_data_button (END)
+
+
+ ///Start Transmission:transactiongenerate_transaction (BEGIN)
+
+    $(function () {
+        a=10;
+        //a=Remaining_energy;
+        //document.write(a)
+        //a=10;
+        if (a>=1){
+          $("#generate_transaction").click(function () {
+
+            $.ajax({
+              url: "/generate/transaction",
+              type: "POST",
+              dataType : 'json',
+              data: $('#transaction_form').serialize(),
+              success: function(response){
+
+                document.getElementById("confirmation_sender_address").value = response["transaction"]["sender_address"];
+                document.getElementById("confirmation_recipient_address").value = response["transaction"]["recipient_address"];
+                document.getElementById("confirmation_voltage").value = response["transaction"]["value_voltage"];
+                document.getElementById("confirmation_current").value = response["transaction"]["value_current"];
+                document.getElementById("confirmation_power").value = response["transaction"]["value_power"];
+                document.getElementById("confirmation_energy").value = response["transaction"]["value_energy"];
+                document.getElementById("confirmation_transaction_energy").value = response["transaction"]["value_transaction_energy"];
+                document.getElementById("confirmation_datatime").value = response["transaction"]["value_datatime"];
+                document.getElementById("confirmation_public_key_to_master").value =response["transaction"]["value_public_key_to_master"];
+                document.getElementById("transaction_signature").value = response["signature"];
+
+                $("#basicModal").modal('show');
+
+              },
+              error: function(error){
+                console.log(error);
+                console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+              }
+            });
+
+          });
+         } //
+      });
+///Start Transmission:transactiongenerate_transaction (END)
+
+      $(function () {
+          $("#button_confirm_transaction").click(function () {
+            //console.log($('#confirmation_transaction_form').serialize());
+
+
+            $.ajax({
+              url: document.getElementById("node_url").value + "/transactions/new",
+              type: "POST",
+              headers: {'Access-Control-Allow-Origin':'*'},
+              dataType : 'json',
+              data: $('#confirmation_transaction_form').serialize(),
+              success: function(response){
+
+                //reset both forms
+                $("#transaction_form")[0].reset();
+                $("#confirmation_transaction_form")[0].reset();
+
+                //clean text boxes
+                $("#sender_address").val("");
+                $("#sender_private_key").val("");
+                $("#recipient_address").val("");
+                $("#amount_voltage").val("");
+                $("#amount_current").val("");
+                $("#amount_power").val("");
+                $("#amount_energy").val("");
+                $("#amount_datatime").val("");
+                $("#amount_transaction_energy").val("");
+                $("#basicModal").modal('hide');
+                $("#success_transaction_modal").modal('show');
+
+              },
+              error: function(error){
+                console.log(error);
+
+              }
+            });
+
+
+             $.ajax({
+              url: document.getElementById("node_url_2").value + "/transactions/new",
+              type: "POST",
+              headers: {'Access-Control-Allow-Origin':'*'},
+              dataType : 'json',
+              data: $('#confirmation_transaction_form').serialize(),
+              success: function(response){
+
+                //reset both forms
+                $("#transaction_form")[0].reset();
+                $("#confirmation_transaction_form")[0].reset();
+
+                //clean text boxes
+                $("#sender_address").val("");
+                $("#sender_private_key").val("");
+                $("#recipient_address").val("");
+                $("#amount_voltage").val("");
+                $("#amount_current").val("");
+                $("#amount_power").val("");
+                $("#amount_energy").val("");
+                $("#amount_datatime").val("");
+                $("#amount_transaction_energy").val("");
+                $("#basicModal").modal('hide');
+                $("#success_transaction_modal").modal('show');
+
+              },
+              error: function(error){
+                console.log(error);
+
+              }
+            });
+
+
+
+          });
+      });
+
+
+
+
+    </script>
+
+{% endblock %}

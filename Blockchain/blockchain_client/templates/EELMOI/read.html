@@ -1,0 +1,31 @@
+{% extends 'EELMOI/layout.html' %}
+
+{% block body %}
+<table id="transactions_table" class="table table-bordered  table-hover text-center" cellspacing="0" width="100%">
+  <table id="transactions_table" class="table table-bordered  table-hover text-center" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>時間</th>
+        <th>電壓</th>
+        <th>電流</th>
+        <th>平均功率</th>
+        <th>虛功率</th>
+        <th>視在功率</th>
+        <th>功率因數</th>
+        <th>消耗功率</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr>
+      <td>{{read.date}}</td>
+      <td>{{read.electric_pressure}}</td>
+      <td>{{read.electric_current}}</td>
+      <td>{{read.average_power}}</td>
+      <td>{{read.idle_power}}</td>
+      <td>{{read.apparent_power}}</td>
+      <td>{{read.power_factor}}</td>
+      <td>{{read.consumed_power}}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

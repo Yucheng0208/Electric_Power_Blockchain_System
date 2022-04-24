@@ -1,0 +1,1712 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-lg-12 text-center">
+  <div class="card-title">
+    <b>
+      <font size="6" color="blue">Show the blockcahin</font>
+    </b>
+  </div>
+</div>
+
+  <div class="container">
+       <div class="row justify-content-center">
+         <div class="form-inline">
+          <!--<div class="col-lg-12 text-center">-->
+
+
+           <div class="form-group">
+             <div class="col-sm-6">
+               <label for="amount_input_data" > <font size="5">The block begin number: </font></label>
+             </div>
+
+               <input type="number" name="amount_Choos_block" id="amount_Choos_block" value=1 rows="1" size="1" class="form-control" >
+
+
+               <div class="col-sm-2">
+                 <input type="button" id="button_Choos_block" class="btn btn-success btn-lg" value="Choos block">
+               </div>
+           <!--     <input type="number" name="check_block" id="check_block" rows="1" size="1" class="form-control" >
+            -->
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<hr>
+ <div class="container-fluid">
+ <div class="row flex-row flex-nowrap">
+ <div class="card-group">
+ <div class="row row-horizon">
+
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-info">
+
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 1 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_1_block_1_length" id="chain_1_block_1_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_1_Block" id="chain_1_block_1_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_1_Nonce" id="chain_1_block_1_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_1_sender" id="chain_1_block_1_sender"   rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_1_recipient" id="chain_1_block_1_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_1_voltage" id="chain_1_block_1_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_1_current" id="chain_1_block_1_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_1_power" id="chain_1_block_1_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_1_energy" id="chain_1_block_1_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_1_tran_energy" id="chain_1_block_1_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_1_block_1_datatime" id="chain_1_block_1_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_1_pre_hash" id="chain_1_block_1_pre_hash" style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_1_hash" id="chain_1_block_1_hash"  style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_1_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+
+    </form>
+    </div>
+ </div>
+
+ <!-- ***** chain_1_block_1 (END) -->
+
+<!-- ***** Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** Space between block_1 and block_2 (END) -->
+
+
+
+
+    <!-- ***** chain_1_block_2 (START) -->
+
+ <div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-info">
+ <!--   <div class="container alert alert-secondary">-->
+
+        <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 1 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_1_block_2_length" id="chain_1_block_2_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_2_Block" id="chain_1_block_2_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_2_Nonce" id="chain_1_block_2_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_2_sender" id="chain_1_block_2_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_2_recipient" id="chain_1_block_2_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_2_voltage" id="chain_1_block_2_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_2_current" id="chain_1_block_2_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_2_power" id="chain_1_block_2_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_2_energy" id="chain_1_block_2_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_2_tran_energy" id="chain_1_block_2_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_1_block_2_datatime" id="chain_1_block_2_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_2_pre_hash" id="chain_1_block_2_pre_hash" style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_2_hash" id="chain_1_block_2_hash"  style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_1_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+ </div>
+
+<!-- ***** chain_1_block_2 (END) -->
+
+<!-- ***** chain_1 Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** chain_1 Space between block_1 and block_2 (END) -->
+
+
+<!-- ***** chain_1_block_3 (START) -->
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-info">
+ <!--   <div class="container alert alert-secondary">-->
+
+     <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 1 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_1_block_3_length" id="chain_1_block_3_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_3_Block" id="chain_1_block_3_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_3_Nonce" id="chain_1_block_3_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_3_sender" id="chain_1_block_3_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_1_block_3_recipient" id="chain_1_block_3_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_3_voltage" id="chain_1_block_3_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_3_current" id="chain_1_block_3_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_3_power" id="chain_1_block_3_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_3_energy" id="chain_1_block_3_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_1_block_3_tran_energy" id="chain_1_block_3_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_1_block_3_datatime" id="chain_1_block_3_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_3_pre_hash" id="chain_1_block_3_pre_hash" style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_1_block_3_hash" id="chain_1_block_3_hash"  style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_2_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+  </div>
+
+<!-- ***** chain_1_block_3 (END) -->
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- @@@@ chain_1 (END) -->
+
+<!-- ***** chain_1 Space between block_2 and block_3 (START) -->
+<div class="col-xs-1">
+</div>
+
+
+
+<!-- ***** chain_1 Space between block_3 and block_3 (END) -->
+
+
+
+ <hr>
+
+<!-- @@@@ chain_2 (START) -->
+ <div class="container-fluid">
+ <div class="row flex-row flex-nowrap">
+ <div class="card-group">
+ <div class="row row-horizon">
+
+    <!-- ***** chain_2_block_1 (START) -->
+
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-warning">
+ <!--   <div class="container alert alert-secondary">-->
+
+    <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 2 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_2_block_1_length" id="chain_2_block_1_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_1_Block" id="chain_2_block_1_Block" rows="1" style="font-weight:bold;" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_1_Nonce" id="chain_2_block_1_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_1_sender" id="chain_2_block_1_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_1_recipient" id="chain_2_block_1_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_1_voltage" id="chain_2_block_1_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_1_current" id="chain_2_block_1_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_1_power" id="chain_2_block_1_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_1_energy" id="chain_2_block_1_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_1_tran_energy" id="chain_2_block_1_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_2_block_1_datatime" id="chain_2_block_1_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_1_pre_hash" id="chain_2_block_1_pre_hash" style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_1_hash" id="chain_2_block_1_hash"  style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_2_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+ </div>
+
+ <!-- ***** chain_2_block_1 (END) -->
+
+<!-- ***** Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** Space between block_1 and block_2 (END) -->
+
+
+
+
+    <!-- ***** chain_2_block_2 (START) -->
+
+ <div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-warning">
+ <!--   <div class="container alert alert-secondary">-->
+
+    <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 2 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_2_block_2_length" id="chain_2_block_2_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_2_Block" id="chain_2_block_2_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_2_Nonce" id="chain_2_block_2_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_2_sender" id="chain_2_block_2_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_2_recipient" id="chain_2_block_2_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_2_voltage" id="chain_2_block_2_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_2_current" id="chain_2_block_2_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_2_power" id="chain_2_block_2_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_2_energy" id="chain_2_block_2_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_2_tran_energy" id="chain_2_block_2_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_2_block_2_datatime" id="chain_2_block_2_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_2_pre_hash" id="chain_2_block_2_pre_hash" style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_2_hash" id="chain_2_block_2_hash"  style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_2_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+ </div>
+
+<!-- ***** chain_2_block_2 (END) -->
+
+<!-- ***** chain_2 Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** chain_2 Space between block_1 and block_2 (END) -->
+
+
+<!-- ***** chain_2_block_3 (START) -->
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-warning">
+ <!--   <div class="container alert alert-secondary">-->
+    <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 2 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_2_block_3_length" id="chain_2_block_3_length"   style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_3_Block" id="chain_2_block_3_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_3_Nonce" id="chain_2_block_3_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+
+
+
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_3_sender" id="chain_2_block_3_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_2_block_3_recipient" id="chain_2_block_3_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_3_voltage" id="chain_2_block_3_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_3_current" id="chain_2_block_3_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_3_power" id="chain_2_block_3_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_3_energy" id="chain_2_block_3_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_2_block_3_tran_energy" id="chain_2_block_3_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_2_block_3_datatime" id="chain_2_block_3_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_3_pre_hash" id="chain_2_block_3_pre_hash" style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_2_block_3_hash" id="chain_2_block_3_hash"  style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_2_block_3_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
+<!-- ***** chain_2_block_3 (END) -->
+ <!-- @@@@@ chain_2 (END) -->
+<!-- ***** chain_2 Space between block_2 and block_3 (START) -->
+<div class="col-xs-1">
+</div>
+
+
+
+
+
+
+
+
+<!-- @@@@@ chain_2 (END) -->
+<hr>
+
+
+<!-- @@@@@ chain_3 (START) -->
+<div class="container-fluid">
+ <div class="row flex-row flex-nowrap">
+ <div class="card-group">
+ <div class="row row-horizon">
+
+    <!-- ***** chain_3_block_1 (START) -->
+
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-danger">
+ <!--   <div class="container alert alert-secondary">-->
+
+    <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 3 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_3_block_1_length" id="chain_3_block_1_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_1_Block" id="chain_3_block_1_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_1_Nonce" id="chain_3_block_1_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_1_sender" id="chain_3_block_1_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_1_recipient" id="chain_3_block_1_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_1_voltage" id="chain_3_block_1_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_1_current" id="chain_3_block_1_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_1_power" id="chain_3_block_1_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_1_energy" id="chain_3_block_1_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_1_tran_energy" id="chain_3_block_1_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_3_block_1_datatime" id="chain_3_block_1_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_1_pre_hash" id="chain_3_block_1_pre_hash" style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_1_hash" id="chain_3_block_1_hash"  style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_3_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+ </div>
+
+ <!-- ***** chain_3_block_1 (END) -->
+
+<!-- ***** Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** Space between block_1 and block_2 (END) -->
+
+
+
+
+    <!-- ***** chain_3_block_2 (START) -->
+
+ <div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-danger">
+ <!--   <div class="container alert alert-secondary">-->
+
+       <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 3 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_3_block_2_length" id="chain_3_block_2_length" style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_2_Block" id="chain_3_block_2_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_2_Nonce" id="chain_3_block_2_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_2_sender" id="chain_3_block_2_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_2_recipient" id="chain_3_block_2_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_2_voltage" id="chain_3_block_2_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_2_current" id="chain_3_block_2_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_2_power" id="chain_3_block_2_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_2_energy" id="chain_3_block_2_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_2_tran_energy" id="chain_3_block_2_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_3_block_2_datatime" id="chain_3_block_2_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_2_pre_hash" id="chain_3_block_2_pre_hash" style="color:red;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_2_hash" id="chain_3_block_2_hash"  style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_3_block_2_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+    </div>
+ </div>
+
+<!-- ***** chain_3_block_2 (END) -->
+
+<!-- ***** chain_3 Space between block_1 and block_2 (START) -->
+<div class="col-xs-1">
+</div>
+<!-- ***** chain_3 Space between block_1 and block_2 (END) -->
+
+
+<!-- ***** chain_3_block_3 (START) -->
+<div class="col-lg-4 col-xs-6 col-offset-6 centered">
+  <div class="container alert alert-danger">
+ <!--   <div class="container alert alert-secondary">-->
+
+        <!-- total  -->
+        <div>
+          <div class="col-xs-6 text-center">
+             <div class=" alert alert-secondary">
+            <div class="container">
+
+               <div class="row">
+                <div class="col-sm-7">
+                <div><b><font size="4"> Master 3 length : </font> </b> </div>
+                </div>
+
+                 <div class="col-sm-4">
+
+                  <input type="text" name="chain_3_block_3_length" id="chain_3_block_3_length"  style="font-weight:bold;background-color:#E8E8E8;text-align: center" value=0 rows="1" class="form-control">
+
+                 </div>
+
+              </div>
+             </div>
+          </div>
+        </div>
+       </div>
+
+
+    <form id="transaction_form" >
+
+
+    <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label > <b><font size="3"> Block:  </font></b></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_3_Block" id="chain_3_block_3_Block" rows="1" style="font-weight:bold;" class="form-control">
+        </div>
+
+        <div class="col-sm-2"><label><font size="3">Nonce: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_3_Nonce" id="chain_3_block_3_Nonce" rows="1" class="form-control"></div>
+        </div>
+
+      </div>
+
+   <div class="container">
+
+       <div class="row">
+        <div class="col-sm-2"><label ><font size="3"> User:  </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_3_sender" id="chain_3_block_3_sender" rows="1" class="form-control"></div>
+
+        <div class="col-sm-2"><label><font size="3">Rec: </font></label></div>
+        <div class="col-sm-4"><input type="text" name="chain_3_block_3_recipient" id="chain_3_block_3_recipient" rows="1" class="form-control"></div>
+        </div>
+
+   </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3"> V(V): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_3_voltage" id="chain_3_block_3_voltage" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3"> I(A): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_3_current" id="chain_3_block_3_current" rows="1" class="form-control"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <font size="3">P(W): </font></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_3_power" id="chain_3_block_3_power" rows="1" class="form-control"></div>
+        <div class="col-sm-2"><label><b> <font size="3" >E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_3_energy" id="chain_3_block_3_energy" rows="1"  style="color:blue; font-weight:bold;" class="form-control"></div>
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-2"><label > <b> <font size="3" >T.E.E: </font></b></label></div>
+        <div class="col-sm-4"><input type="number" name="chain_3_block_3_tran_energy" id="chain_3_block_3_tran_energy" rows="1" style="color:red; font-weight:bold;" class="form-control"></div>
+        <div class="col-sm-2"><label> <font size="3">D.T.: </font></label></div>
+        <div class="col-sm-4"><input type="text"name="chain_3_block_3_datatime" id="chain_3_block_3_datatime" rows="1"  class="form-control"></div>
+      </div>
+       </div>
+
+<br>
+
+    <div class="container">
+
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Pre_H: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_3_pre_hash" id="chain_3_block_3_pre_hash" style="color:#00FF00;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+          <label class="col-sm-2"><font size="3">Hash: </font></label>
+          <div class="col-sm-10">
+            <input type="textarea" name="chain_3_block_3_hash" id="chain_3_block_3_hash"  style="color:blue;" rows="2" class="form-control">
+          </div>
+         </div>
+    </div>
+
+ <br>
+
+      <!-- Modal  <div class="row">  -->
+        <div>
+          <div class="col-xs-6 text-center">
+           <div>
+            <center>
+            <input type="button" id="chain_3_block_3_mine" class="btn btn-primary btn-xs" value="Mine">
+            </center>
+          </div>
+        </div>
+       </div>
+
+
+    </form>
+     </div>
+     </div>
+    </div>
+  </div>
+ </div>
+</div>
+<!-- @@@@@ chain_3 (END) -->
+<!-- ##### blockchain (END) -->
+
+ <script>
+block_offset=0;
+/*
+   $("#button_Choos_block").click(function(){
+      start_block=amount_Choos_block.value;
+
+     });
+
+*/
+
+   $("#button_Choos_block").click(function(){
+
+          $.ajax({
+            url: '/show_diagram',
+            type: 'GET',
+            success: function(response){
+
+              //document.getElementById("warning").style.display = "block";
+            //var block_offset=0;
+            block_offset_1=parseInt(amount_Choos_block.value);
+           // bb=block_offset+100;
+            block_offset=block_offset_1-1;
+            //document.getElementById("check_block").value =bb;
+            var chain_1_length=response["show_diagram_chain"].length;
+            var chain_2_length=response["show_diagram_chain"].length;
+            var chain_3_length=response["show_diagram_chain"].length;
+            //document.getElementById("chain_1_length" ).value =chain_length;
+            //document.getElementById("chain_2_length" ).value =chain_length;
+            //document.getElementById("chain_1_length" ).value =chain_length;
+             //j=1;+
+            //var chain_str="chain_1_block_"+1+"_hash";
+           // document.getElementById("chain_1_block_1_Block").value = response["show_diagram_chain"][1]["block_number"];
+            // document.getElementById("chain_1_block_1_hash").value =12;
+            //aa=1;
+          block_index=(chain_1_length-0)-(block_offset);
+          //  chain_1  (START)    [block_offset+j-1 ]
+
+
+         for (j =1; j <=3; j++) {
+
+         if (j<=block_index && block_offset>=0){
+
+           if (j==1 && block_offset==0　){
+             chain_str="chain_1_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_1_length;
+
+             chain_str="chain_1_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_1_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="None";
+             chain_str="chain_1_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_1_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_1_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="Start CB" ;
+
+           }
+           else{
+
+
+             chain_str="chain_1_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_1_length;
+             //  block_***offset+j-1       block_offset+j-1
+             chain_str="chain_1_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_1_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["nonce"];
+             chain_str="chain_1_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_1_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_1_block_"+j+"_sender";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["sender_address"];
+
+             chain_str="chain_1_block_"+j+"_recipient";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["recipient_address"];
+
+             chain_str="chain_1_block_"+j+"_voltage";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_voltage"];
+
+             chain_str="chain_1_block_"+j+"_current";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_current"];
+
+             chain_str="chain_1_block_"+j+"_power";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_power"];
+
+             chain_str="chain_1_block_"+j+"_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_energy"];
+
+             chain_str="chain_1_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_transaction_energy"];
+
+             chain_str="chain_1_block_"+j+"_datatime";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_datatime"];
+             }
+          }
+             else{
+             chain_str="chain_1_block_"+j+"_length";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_Block";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_hash";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_recipient";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_voltage";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_current";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_power";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_1_block_"+j+"_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_1_block_"+j+"_datatime";
+             document.getElementById(chain_str).value ="";
+             }
+          }
+         for (j =1; j <=3; j++) {
+
+         if (j<=block_index && block_offset>=0){
+
+           if (j==1 && block_offset==0　){
+             chain_str="chain_2_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_2_length;
+
+             chain_str="chain_2_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_2_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="None";
+             chain_str="chain_2_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_2_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_2_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="Start CB" ;
+
+           }
+           else{
+
+
+
+             chain_str="chain_2_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_2_length;
+             //  block_***offset+j-1       block_offset+j-1
+             chain_str="chain_2_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_2_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["nonce"];
+             chain_str="chain_2_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_2_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_2_block_"+j+"_sender";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["sender_address"];
+
+             chain_str="chain_2_block_"+j+"_recipient";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["recipient_address"];
+
+             chain_str="chain_2_block_"+j+"_voltage";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_voltage"];
+
+             chain_str="chain_2_block_"+j+"_current";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_current"];
+
+             chain_str="chain_2_block_"+j+"_power";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_power"];
+
+             chain_str="chain_2_block_"+j+"_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_energy"];
+
+             chain_str="chain_2_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_transaction_energy"];
+
+             chain_str="chain_2_block_"+j+"_datatime";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_datatime"];
+             }
+          }
+             else{
+             chain_str="chain_2_block_"+j+"_length";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_Block";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_hash";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_recipient";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_voltage";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_current";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_power";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_2_block_"+j+"_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_2_block_"+j+"_datatime";
+             document.getElementById(chain_str).value ="";
+             }
+          }
+         //  chain_2  (END)
+
+
+
+        //  chain_3  (START)
+
+        for (j =1; j <=3; j++) {
+
+         if (j<=block_index && block_offset>=0){
+
+           if (j==1 && block_offset==0　){
+             chain_str="chain_3_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_3_length;
+
+             chain_str="chain_3_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_3_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="None";
+             chain_str="chain_3_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_3_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_3_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="Start CB" ;
+
+           }
+           else{
+
+
+             chain_str="chain_3_block_"+j+"_length";
+             document.getElementById(chain_str).value =chain_3_length;
+             //  block_***offset+j-1       block_offset+j-1
+             chain_str="chain_3_block_"+j+"_Block";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["block_number"];
+             chain_str="chain_3_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["nonce"];
+             chain_str="chain_3_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["previous_hash"];
+             chain_str="chain_3_block_"+j+"_hash";
+             document.getElementById(chain_str).value =response["show_diagram_chain"][block_offset+j-1 ]["hash"];
+
+             chain_str="chain_3_block_"+j+"_sender";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["sender_address"];
+
+             chain_str="chain_3_block_"+j+"_recipient";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["recipient_address"];
+
+             chain_str="chain_3_block_"+j+"_voltage";
+             document.getElementById(chain_str).value = response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_voltage"];
+
+             chain_str="chain_3_block_"+j+"_current";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_current"];
+
+             chain_str="chain_3_block_"+j+"_power";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_power"];
+
+             chain_str="chain_3_block_"+j+"_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_energy"];
+
+             chain_str="chain_3_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_transaction_energy"];
+
+             chain_str="chain_3_block_"+j+"_datatime";
+             document.getElementById(chain_str).value =
+             response["show_diagram_chain"][block_offset+j-1 ]["transactions"][0]["value_datatime"];
+             }
+          }
+             else{
+             chain_str="chain_3_block_"+j+"_length";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_Block";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_Nonce";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_pre_hash";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_hash";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_sender";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_recipient";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_voltage";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_current";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_power";
+             document.getElementById(chain_str).value ="";
+             chain_str="chain_3_block_"+j+"_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_tran_energy";
+             document.getElementById(chain_str).value ="";
+
+             chain_str="chain_3_block_"+j+"_datatime";
+             document.getElementById(chain_str).value ="";
+             }
+          }
+            },
+            error: function(error){
+              console.log(error);
+            }
+          });
+
+      })
+
+
+
+     </script>
+{% endblock %}
